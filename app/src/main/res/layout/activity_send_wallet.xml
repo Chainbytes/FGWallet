@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2f3942"
+    android:descendantFocusability="beforeDescendants"
+    android:filterTouchesWhenObscured="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.breadwallet.presenter.activities.MainActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/middle_view_flipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:filterTouchesWhenObscured="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/breadwalletupcentered"
+            android:filterTouchesWhenObscured="true"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:filterTouchesWhenObscured="true"
+            android:text="@string/settings"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/middle_view_flipper">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="@string/send"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="Recipient"/>
+        <ImageButton
+            android:id="@+id/scanQRButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_photo_camera"
+            android:background="@drawable/border_background"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+</RelativeLayout>
+        <EditText
+            android:id="@+id/address_edit_text"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/Amount"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="40dp">
+            <EditText
+                android:id="@+id/btc_amount_Edt"
+                android:layout_width="wrap_content"
+                android:text="0.00000000btc"
+                android:padding="5dp"
+                android:textSize="16sp"
+                android:background="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/currency_amount_Edt"
+                android:layout_width="wrap_content"
+                android:text="0.00000000btc"
+                android:background="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:text="Memo"/>
+
+        <EditText
+            android:id="@+id/memoEdt"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="80dp" />
+
+        <Button
+            android:id="@+id/continueBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:text="Continue" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/main_button_burger"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/burger"
+        android:filterTouchesWhenObscured="true" />
+
+
+
+</RelativeLayout>

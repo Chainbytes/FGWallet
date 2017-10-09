@@ -33,12 +33,12 @@
         android:id="@+id/scan_clipboard_buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_gravity="center"
         android:filterTouchesWhenObscured="true"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/main_button_scan_qr_code"

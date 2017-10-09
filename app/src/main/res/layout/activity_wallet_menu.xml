@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2f3942"
+    android:descendantFocusability="beforeDescendants"
+    android:filterTouchesWhenObscured="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.breadwallet.presenter.activities.MainActivity">
+
+
+
+    <ViewFlipper
+        android:id="@+id/middle_view_flipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:filterTouchesWhenObscured="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/breadwalletupcentered"
+            android:filterTouchesWhenObscured="true"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:filterTouchesWhenObscured="true"
+            android:text="@string/settings"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+    </ViewFlipper>
+
+    <ProgressBar
+        android:id="@+id/sync_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/main_button_burger"
+        android:filterTouchesWhenObscured="true"
+        android:indeterminateOnly="false"
+        android:keepScreenOn="true"
+        android:progressDrawable="@drawable/progress_blue"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/sync_progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sync_progress_bar"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/middle_view_flipper"
+        android:filterTouchesWhenObscured="true"
+        android:textColor="@color/light_gray"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/main_button_burger"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/burger"
+        android:filterTouchesWhenObscured="true" />
+
+
+    <ViewFlipper
+        android:id="@+id/locker_pay_flipper"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:filterTouchesWhenObscured="true">
+
+        <Button
+            android:id="@+id/main_button_locker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/locker"
+            android:filterTouchesWhenObscured="true" />
+
+        <TextView
+            android:id="@+id/main_button_pay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:filterTouchesWhenObscured="true"
+            android:gravity="center"
+            android:text="@string/pay"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:clickable="true"
+            android:filterTouchesWhenObscured="true"
+            android:gravity="center"
+            android:onClick="request"
+            android:text="@string/request"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp" />
+
+    </ViewFlipper>
+
+    <RelativeLayout
+        android:id="@+id/main_internet_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/pink"
+        android:filterTouchesWhenObscured="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/network_bar_line"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/separator_height"
+            android:background="@color/gray"
+            android:filterTouchesWhenObscured="true" />
+
+        <TextView
+            android:id="@+id/not_connected_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/network_bar_line"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:filterTouchesWhenObscured="true"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/not_connected"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/separator_height"
+            android:layout_below="@+id/not_connected_text"
+            android:background="@color/gray"
+            android:filterTouchesWhenObscured="true" />
+
+    </RelativeLayout>
+
+
+
+
+    <com.breadwallet.presenter.customviews.BubbleTextView
+        android:id="@+id/middle_bubble_tip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/middle_view_flipper"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bubble_up"
+        android:filterTouchesWhenObscured="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/middle_view_tip_first"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <com.breadwallet.presenter.customviews.BubbleTextView
+        android:id="@+id/middle_bubble_tip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/middle_view_flipper"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bubble_up"
+        android:filterTouchesWhenObscured="true"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <com.breadwallet.presenter.customviews.BubbleTextView
+        android:id="@+id/middle_bubble_blocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/middle_view_flipper"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bubble_up"
+        android:filterTouchesWhenObscured="true"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:filterTouchesWhenObscured="true"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/tips_block_pane"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:filterTouchesWhenObscured="true"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/qr_image_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:filterTouchesWhenObscured="true"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/sync_progress_bar">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="BTC"
+    android:gravity="center"
+    android:drawablePadding="5dp"
+    android:drawableLeft="@drawable/bitcoin_buy_blue"
+    android:layout_gravity="center"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:text="@string/send"/>
+
+    <ImageButton
+        android:id="@+id/scanQRButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1.3"
+        android:src="@drawable/ic_photo_camera"
+        android:filterTouchesWhenObscured="true"
+        android:stateListAnimator="@null"
+        android:textAllCaps="false"
+        android:background="@drawable/border_background"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:text="@string/receive" />
+</LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/border_background"
+    android:layout_marginLeft="45dp"
+    android:layout_marginRight="45dp">
+<RelativeLayout
+    android:id="@+id/balance_label_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/balance"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        />
+    <ImageButton
+        android:id="@+id/refresh_balance_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_sync"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
+    <TextView
+        android:id="@+id/btc_balance_text"
+        android:layout_below="@+id/balance_label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.034264753BTC"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/currency_current_text"
+        android:layout_below="@+id/btc_balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textSize="16sp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
+        <ImageView
+            android:id="@+id/main_image_qr_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:filterTouchesWhenObscured="true" />
+
+        <RelativeLayout
+            android:id="@+id/theAddressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:filterTouchesWhenObscured="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/your_address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:filterTouchesWhenObscured="true"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:drawableRight="@drawable/ic_content_copy"
+                android:text="@string/your_current_address"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/main_address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                 android:layout_below="@+id/your_address_text"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.breadwallet.presenter.customviews.BubbleTextView
+        android:id="@+id/qr_bubble1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bubble_up"
+        android:filterTouchesWhenObscured="true"
+        android:gravity="center"
+        android:text="@string/toast_qr_tip"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <com.breadwallet.presenter.customviews.BubbleTextView
+        android:id="@+id/qr_bubble2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bubble_up"
+        android:filterTouchesWhenObscured="true"
+        android:gravity="center"
+        android:text="@string/toast_address_tip"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+</RelativeLayout>

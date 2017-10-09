@@ -62,7 +62,7 @@ public class BRTipsManager {
                 tryToGoToMainScreen = false;
             }
         }, 1000);
-        app.parallaxViewPager.setCurrentItem(1);
+        //app.parallaxViewPager.setCurrentItem(1);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -87,7 +87,7 @@ public class BRTipsManager {
                                 count++;
                                 break;
                             case 3:
-                                finalApp.parallaxViewPager.setCurrentItem(0);
+                               // finalApp.parallaxViewPager.setCurrentItem(0);
                                 sendText.performClick();
                                 count++;
                                 break;
@@ -96,7 +96,7 @@ public class BRTipsManager {
                                 count++;
                                 break;
                             case 5:
-                                finalApp.parallaxViewPager.setCurrentItem(1);
+                               // finalApp.parallaxViewPager.setCurrentItem(1);
                                 count = 0;
                                 SharedPreferencesManager.putTipsShown(finalApp, true);
                                 tipsBlockPane.setVisibility(View.GONE);

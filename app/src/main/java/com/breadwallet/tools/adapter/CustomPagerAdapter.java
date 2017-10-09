@@ -120,7 +120,7 @@ public class CustomPagerAdapter extends FragmentPagerAdapter {
                     if (mainQR != null) {
                         mainQR.startAnimation(set);
                     }
-                    app.pageIndicator.setVisibility(View.VISIBLE);
+                 //   app.pageIndicator.setVisibility(View.VISIBLE);
                     if (MiddleViewAdapter.getSyncing()) {
                         app.showHideSyncProgressViews(true);
                     }
@@ -163,7 +163,7 @@ public class CustomPagerAdapter extends FragmentPagerAdapter {
                     if (mainQR != null) {
                         mainQR.startAnimation(set);
                     }
-                    app.pageIndicator.setVisibility(View.GONE);
+                    //app.pageIndicator.setVisibility(View.GONE);
                     app.showHideSyncProgressViews(false);
                 }
             });

@@ -376,7 +376,7 @@ public class SharedPreferencesManager {
 
     public static int getCurrencyUnit(Activity context) {
         SharedPreferences settingsToGet = context.getSharedPreferences(BRConstants.PREFS_NAME, 0);
-        return settingsToGet.getInt(BRConstants.CURRENT_UNIT, BRConstants.CURRENT_UNIT_BITS);
+        return settingsToGet.getInt(BRConstants.CURRENT_UNIT, BRConstants.CURRENT_UNIT_BITCOINS);
     }
 
     public static void putCurrencyUnit(Activity context, int unit) {

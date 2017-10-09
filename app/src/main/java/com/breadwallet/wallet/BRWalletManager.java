@@ -296,16 +296,15 @@ public class BRWalletManager {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    final MainFragmentQR mainFragmentQR = CustomPagerAdapter.adapter == null ? null : CustomPagerAdapter.adapter.mainFragmentQR;
-                    final String tmpAddr = getReceiveAddress();
+                     final String tmpAddr = getReceiveAddress();
                     Log.e(TAG, "run: got address: " + tmpAddr);
                     if (tmpAddr == null || tmpAddr.isEmpty()) return;
                     SharedPreferencesManager.putReceiveAddress(ctx, tmpAddr);
-                    if (mainFragmentQR == null) return;
+                    if (app == null) return;
                     ctx.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mainFragmentQR.refreshAddress(tmpAddr);
+                            app.refreshAddress();
                         }
                     });
 
@@ -1080,7 +1079,7 @@ public class BRWalletManager {
         int width = point.x;
         int height = point.y;
         int smallerDimension = width < height ? width : height;
-        smallerDimension = (int) (smallerDimension * 0.7f);
+        smallerDimension = (int) (smallerDimension * 0.3f);
         Bitmap bitmap = null;
         try {
             bitmap = encodeAsBitmap(bitcoinURL, smallerDimension);

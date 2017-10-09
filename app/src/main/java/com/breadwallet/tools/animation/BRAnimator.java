@@ -105,7 +105,7 @@ public class BRAnimator {
                     BRAnimator.pressMenuButton(app);
                 decoderFragmentOn = true;
                 app.activityButtonsEnable(false);
-                CustomPagerAdapter.adapter.showFragments(false, app);
+//                CustomPagerAdapter.adapter.showFragments(false, app);
                 //Disabled inspection: <Expected resource type anim>
                 FragmentTransaction fragmentTransaction = app.getFragmentManager().beginTransaction();
                 fragmentTransaction.setCustomAnimations(R.animator.from_bottom, R.animator.to_top);
@@ -122,17 +122,17 @@ public class BRAnimator {
         try {
             final MainActivity app = MainActivity.app;
             if (app == null || scanResultFragmentOn) return;
-            CustomPagerAdapter.adapter.showFragments(false, app);
+//            CustomPagerAdapter.adapter.showFragments(false, app);
             scanResultFragmentOn = true;
             InputMethodManager keyboard = (InputMethodManager) app.
                     getSystemService(Context.INPUT_METHOD_SERVICE);
 
-            try {
+         /*   try {
                 keyboard.hideSoftInputFromWindow(CustomPagerAdapter.adapter.
                         mainFragment.addressEditText.getWindowToken(), 0);
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            }*/
             app.setBurgerButtonImage(BRConstants.BACK);
             //Disabled inspection: <Expected resource type anim>
             final FragmentManager fragmentManager = app.getFragmentManager();
@@ -174,7 +174,7 @@ public class BRAnimator {
                         }
                     }).start();
                 level++;
-                CustomPagerAdapter.adapter.showFragments(false, context);
+//                CustomPagerAdapter.adapter.showFragments(false, context);
                 context.setBurgerButtonImage(BRConstants.CLOSE);
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 FragmentSettingsAll to = (FragmentSettingsAll) fragmentManager.
@@ -198,9 +198,9 @@ public class BRAnimator {
                 InputMethodManager keyboard = (InputMethodManager) context.
                         getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                if (keyboard != null)
+         /*       if (keyboard != null)
                     keyboard.hideSoftInputFromWindow(CustomPagerAdapter.adapter.
-                            mainFragment.addressEditText.getWindowToken(), 0);
+                            mainFragment.addressEditText.getWindowToken(), 0);*/
             } else if (level == 1) {
                 if (PLATFORM_ON)
                     new Thread(new Runnable() {
@@ -218,7 +218,7 @@ public class BRAnimator {
                         findFragmentByTag(FragmentSettingsAll.class.getName());
                 fragmentTransaction.remove(fragmentSettingsAll);
                 fragmentTransaction.commit();
-                CustomPagerAdapter.adapter.showFragments(true, context);
+           //     CustomPagerAdapter.adapter.showFragments(true, context);
             }
         } catch (Exception e) {
             e.printStackTrace();

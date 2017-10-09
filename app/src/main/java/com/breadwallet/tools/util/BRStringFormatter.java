@@ -77,9 +77,22 @@ public class BRStringFormatter {
         double rate = SharedPreferencesManager.getRate(ctx);
         long exchange = BRWalletManager.getInstance(ctx).localAmount(cm.getBALANCE(),
                 new BigDecimal(String.valueOf(rate)).multiply(new BigDecimal("100")).doubleValue());
-
         return getFormattedCurrencyString("BTC", cm.getBALANCE()) + " (" +
                 getFormattedCurrencyString(iso, exchange) + ")";
+    }
+
+    public static String getCurrentBTCBalanceText(Activity ctx) {
+        CurrencyManager cm = CurrencyManager.getInstance(ctx);
+        return getFormattedCurrencyString("BTC", cm.getBALANCE());
+    }
+
+    public static String getCurrentCurrencyBalanceText(Activity ctx) {
+        CurrencyManager cm = CurrencyManager.getInstance(ctx);
+        String iso = SharedPreferencesManager.getIso(ctx);
+        double rate = SharedPreferencesManager.getRate(ctx);
+        long exchange = BRWalletManager.getInstance(ctx).localAmount(cm.getBALANCE(),
+                new BigDecimal(String.valueOf(rate)).multiply(new BigDecimal("100")).doubleValue());
+        return getFormattedCurrencyString(iso, exchange);
     }
 
     public static String getFormattedCurrencyString(String isoCurrencyCode, long amount) {
