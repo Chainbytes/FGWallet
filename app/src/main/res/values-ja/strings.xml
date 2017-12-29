@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">FG Wallet</string>
+    <string name="title_activity_navigation_drawer_activtiy">NavigationDrawerActivtiy</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sms">SmsActivity</string>
+    <string name="action_logout">Logout</string>
+    <string name="msg_enter_mobile">Enter your mobile number to get started!</string>
+    <string name="lbl_name">Name</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_mobile">Mobile</string>
+    <string name="lbl_next">次</string>
+    <string name="msg_sit_back">Sit back &amp; Relax! while we verify your mobile number</string>
+    <string name="msg_manual_otp">自動的にSMSを検出できない場合は、以下のOTPを入力してください</string>
+    <string name="lbl_enter_otp">OTPを入力</string>
+    <string name="lbl_submit">提出する</string>
+    <string name="lbl_resend">再送信する</string>
+    <string name="msg_recovery">あなたの携帯電話を失った場合、あなたの財布を回復するためにこのフレーズが必要になります</string>
+    <string name="please_write">それを書き留めてください</string>
+    <string name="msg_12_phasre">ancient mushroom ice shift target season sail doctor wrist seed tragic camera</string>
+    <string name="msg_recovery1">下のリストからリカバリーフレーズの1番目の単語を選択してください</string>
+    <string name="msg_recovery2">下のリストからリカバリーフレーズの2番目の単語を選択してください</string>
+    <string name="msg_recovery3">下のリストからリカバリーフレーズの3番目の単語を選択してください</string>
+    <string name="msg_recovery4">下のリストからリカバリーフレーズの4番目の単語を選択してください</string>
+    <string name="msg_recovery5">下のリストからリカバリーフレーズの5番目の単語を選択してください</string>
+    <string name="msg_recovery6">下のリストからリカバリーフレーズの6番目の単語を選択してください</string>
+    <string name="msg_recovery7">下のリストからリカバリーフレーズの7番目の単語を選択してください</string>
+    <string name="msg_recovery8">下のリストからリカバリーフレーズの8番目の単語を選択してください</string>
+    <string name="msg_recovery9">下のリストからリカバリーフレーズの9番目の単語を選択してください</string>
+    <string name="msg_recovery10">下のリストからリカバリーフレーズの10番目の単語を選択してください</string>
+    <string name="msg_recovery11">下のリストからリカバリーフレーズの11番目の単語を選択してください</string>
+    <string name="msg_recovery12">下のリストからリカバリーフレーズの12番目の単語を選択してください</string>
+    <string name="recover">回復します</string>
+    <string name="enter_recover">リカバリーフレーズを入力</string>
+    <string name="enter_pin">あなたのPINを入力してください</string>
+
+    //Main Activity
+    <string name="new_walllet">新規ウォレット</string>
+    <string name="restore_walllet">ウォレット復元</string>
+    //New Wallet
+    <string name="mobile_number">携帯電話番号</string>
+    <string name="new_pin">新規暗証番号 (4ケタ)</string>
+    <string name="re_enter_pin">もう一度暗証番号入力</string>
+    <string name="terms_conditions">FGウォレットアカウントを作成することにより、利用規約に合意するものとします。</string>
+    <string name="create_wallet">ウォレット作成</string>
+    //Restore Wallet
+    <string name="restore_mobile_number">携帯電話番号</string>
+    <string name="your_pin">暗証番号</string>
+    <string name="btn_restore_walllet">ウォレットの復元</string>
+    <string name="need_help">ヘルプ</string>
+    //Home Activity
+    <string name="transaction_history">取引履歴</string>
+    <string name="market_chart">マーケットチャート</string>
+    <string name="atm_map">ATMマップ</string>
+    <string name="settings">設定</string>
+    <string name="contact_support">サポート問い合わせ</string>
+    <string name="log_out">ログアウト</string>
+    //Wallet Menu
+    <string name="send">送信</string>
+    <string name="receive">受信</string>
+    <string name="current_balance">現在の残高</string>
+    <string name="btc">BTC</string>
+    <string name="recipient">宛先</string>
+    <string name="amount">数値</string>
+    <string name="memo">メモ</string>
+    <string name="network_fee">Network Fee</string>
+    <string name="btn_continue">次へ</string>
+    <string name="create_new_address">新規アドレス生成</string>
+    //Settings
+    <string name="about">アプリについて</string>
+    <string name="recovery_phrase">復元フレーズ</string>
+    <string name="change_password">パスワード変更</string>
+    <string name="rescan_blockchain">ブロックチェーンを再同期</string>
+    <string name="change_language">言語の変更</string>
+    //Recovery Phrase Settings
+    <string name="important">重要</string>
+    <string name="title_recovery_phrase">復元フレーズは誰にも見せないでください。</string>
+    <string name="msg_recovery_phrase">復元フレーズはパスワード管理ソフトなどで管理しないでください。</string>
+    <string name="show_phrase">復元フレーズを見る</string>
+    <string name="title_recovery_phrase2">携帯電話をなくした場合、このリカバリーフレーズを使って復元してください。</string>
+    <string name="msg_recovery_phrase2">紙に書いて保管してく保管してください</string>
+    //Change Password
+    <string name="old_pin">古い暗証番号</string>
+    <string name="re_enter_new_pin">新規暗証番号再入力</string>
+    //Other
+    <string name="verify_blockchain">BLOCKCHAINで確認する</string>
+    <string name="transaction">取引履歴</string>
+    <string name="transaction_memo">メモ</string>
+    <string name="to">送信先</string>
+    <string name="from">送信元</string>
+    <string name="date">日付</string>
+    <string name="received">受信</string>
+    <string name="sent">送信済</string>
+    <string name="min_withdrawal">最低引き出し額:</string>
+    <string name="send_network_fee">ネットワーク料金:</string>
+    <string name="balance_minus_fee">利用可能な合計マイナス料金を使用する:</string>
+</resources>
