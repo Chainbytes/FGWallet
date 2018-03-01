@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ivan.fgwallet.utils.Constant;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
 import java.io.UnsupportedEncodingException;
@@ -65,13 +66,24 @@ public class ContactSupportActivity extends AppCompatActivity {
         findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                emailSupport();
+                if (edtName.getText().toString().equals("")) {
+                    Snackbar.make(getWindow().getDecorView().getRootView(), "Please enter Name", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (edtEmail.getText().toString().equals("")) {
+                    Snackbar.make(getWindow().getDecorView().getRootView(), "Please enter  Email", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (edtInqiry.getText().toString().equals("")) {
+                    Snackbar.make(getWindow().getDecorView().getRootView(), "Please enter Inqiry", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else {
+                    emailSupport();
+                }
             }
         });
     }
 
     private void emailSupport() {
-        String email = "support@financial-gate.info";
+        String email = "android@financial-gate.info";
 //        String email = "nhatpham.hitechltd@gmail.com";
 //        String body = "Name: " + edtName.getText().toString() + "\n" +
 //                "Email: " + edtEmail.getText().toString() + "\n" +
@@ -90,7 +102,7 @@ public class ContactSupportActivity extends AppCompatActivity {
 //                .split("\\s*,\\s*"));
 //        new SendMailTask(ContactSupportActivity.this).execute(edtEmail.getText().toString(),
 //                edtPassword.getText().toString(), toEmailList, "Contact Support",  edtInqiry.getText().toString());
-        sendMail(email, "Contact Support", edtInqiry.getText().toString());
+        sendMail(email, "Contact Support", "Email: " + edtEmail.getText().toString() + "\n" + edtInqiry.getText().toString());
     }
 
     private void sendMail(String email, String subject, String messageBody) {
@@ -111,12 +123,12 @@ public class ContactSupportActivity extends AppCompatActivity {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.host", "smtp.yandex.com");
         properties.put("mail.smtp.port", "587");
 
         return Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(edtEmail.getText().toString(), edtPassword.getText().toString());
+                return new PasswordAuthentication("fgwallet@yandex.com", "fgwallet123456");
             }
         });
     }
@@ -124,7 +136,7 @@ public class ContactSupportActivity extends AppCompatActivity {
     private Message createMessage(String email, String subject, String messageBody, Session session) throws
             MessagingException, UnsupportedEncodingException {
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(edtEmail.getText().toString(), edtName.getText().toString()));
+        message.setFrom(new InternetAddress("fgwallet@yandex.com", edtName.getText().toString()));
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(email, email));
         message.setSubject(subject);
         message.setText(messageBody);

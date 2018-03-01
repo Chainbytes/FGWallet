@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_marginTop="10dp"
-            android:text="Name"
+            android:text="@string/name"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_marginTop="10dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -66,6 +66,7 @@
             android:singleLine="true"
             android:textCursorDrawable="@drawable/color_cursor" />
         <TextView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
@@ -76,6 +77,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:visibility="gone"
             android:id="@+id/pass_word"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -90,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_marginTop="10dp"
-            android:text="Inquiry"
+            android:text="@string/inquiry"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -121,7 +123,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:src="@mipmap/ic_btc"
-        android:text="Submit"
+        android:text="@string/lbl_submit"
         android:textColor="@android:color/white"
         android:textSize="17dp"
         android:textStyle="bold" />

@@ -2,8 +2,10 @@ package com.ivan.fgwallet.volley;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
@@ -25,7 +27,13 @@ public class AppController extends Application {
     private ImageLoader mImageLoader;
  
     private static AppController mInstance;
- 
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();

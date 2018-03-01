@@ -100,4 +100,8 @@
     <string name="min_withdrawal">最低引き出し額:</string>
     <string name="send_network_fee">ネットワーク料金:</string>
     <string name="balance_minus_fee">利用可能な合計マイナス料金を使用する:</string>
+    //Contact Support
+    <string name="name">名</string>
+    <string name="email">メール</string>
+    <string name="inquiry">問い合わせ</string>
 </resources>

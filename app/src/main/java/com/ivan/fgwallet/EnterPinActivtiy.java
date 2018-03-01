@@ -42,7 +42,7 @@ public class EnterPinActivtiy extends AppCompatActivity {
 //                    _pin.setError("Please enter your pin");
                     Snackbar.make(getWindow().getDecorView().getRootView(), "Please enter your pin", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
-                } else {
+                }else{
                     if (_pin.getText().toString().equals(pin)) {
                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         finish();
@@ -51,7 +51,9 @@ public class EnterPinActivtiy extends AppCompatActivity {
                         Snackbar.make(getWindow().getDecorView().getRootView(), "Your PIN not match", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }
+
                 }
+
             }
         });
     }

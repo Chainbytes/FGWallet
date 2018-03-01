@@ -17,7 +17,7 @@
     <string name="lbl_mobile">Mobile</string>
     <string name="lbl_next">Next</string>
     <string name="msg_sit_back">Sit back &amp; Relax! while we verify your mobile number</string>
-    <string name="msg_manual_otp">Enter the OTP below in case if we fail to detect the SMS automatically</string>
+    <string name="msg_manual_otp">Enter the OTP sent to your mobile number</string>
     <string name="lbl_enter_otp">Enter OTP</string>
     <string name="lbl_submit">Submit</string>
     <string name="lbl_resend">Resend</string>
@@ -100,5 +100,9 @@
     <string name="min_withdrawal">Minimum withdrawal amount:</string>
     <string name="send_network_fee">Network fee:</string>
     <string name="balance_minus_fee">Use total available minus fee:</string>
+    //Contact Support
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="inquiry">Inquiry</string>
 
 </resources>
